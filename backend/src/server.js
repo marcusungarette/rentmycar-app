@@ -1,3 +1,4 @@
+const path = require('path');
 const dotenv = require('dotenv');
 const express = require('express');
 const cors = require('cors');
@@ -12,6 +13,7 @@ const server = express();
 
 server.use(cors());
 server.use(express.json());
+server.use('/files', express.static(path.resolve(__dirname, '..', 'uploads')));
 
 server.use(routes);
 
