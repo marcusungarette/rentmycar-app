@@ -1,16 +1,18 @@
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import New from './pages/New';
 
-const Routes = (): JSX.Element => {
+const Routes = () => {
   return (
-    <Switch>
-      <Route path="/" exact component={Login} />
-      <Route path="/dashboard" component={Dashboard} />
-      <Route path="/new" component={New} />
-    </Switch>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" exact component={Login} />
+        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/new" component={New} />
+      </Switch>
+    </BrowserRouter>
   );
 };
 
