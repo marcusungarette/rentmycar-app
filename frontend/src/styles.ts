@@ -34,6 +34,12 @@ export const Content = styled.div`
     margin-bottom: 8px;
   }
 
+  form label span {
+    font-weight: normal;
+    color: #999;
+    font-size: 12px;
+  }
+
   form input {
     margin-bottom: 20px;
     border: 1px solid #ddd;

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { CarList } from './styles';
 import api from '../../services/api';
 
@@ -28,14 +29,19 @@ export default function Dashboard() {
     loadCars();
   }, []);
   return (
-    <CarList>
-      {cars.map(car => (
-        <li key={car._id}>
-          <header style={{ backgroundImage: `url(${car.thumbnail_url})` }} />
-          <strong>{car.category}</strong>
-          <span>{car.price ? `R$${car.price}/dia` : 'CONSULTE'}</span>
-        </li>
-      ))}
-    </CarList>
+    <>
+      <CarList>
+        {cars.map(car => (
+          <li key={car._id}>
+            <header style={{ backgroundImage: `url(${car.thumbnail_url})` }} />
+            <strong>{car.category}</strong>
+            <span>{car.price ? `R$${car.price}/dia` : 'CONSULTE'}</span>
+          </li>
+        ))}
+      </CarList>
+      <Link to="/new">
+        <button>Cadastrar novo Carro</button>
+      </Link>
+    </>
   );
 }
